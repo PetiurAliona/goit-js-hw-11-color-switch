@@ -12,7 +12,6 @@ const randomIntegerFromInterval = (min, max) => {
 };
 
 let timerId = null;
-const bodyNode = document.querySelector('body');
 const startBtn = document.querySelector('.start-btn');
 
 
@@ -20,7 +19,7 @@ const startBtn = document.querySelector('.start-btn');
   document.querySelector('#root').addEventListener('click', e => {
        if (e.target.dataset.action === 'start') {
            timerId = setInterval(() => {
-               bodyNode.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length)];
+               document.body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length)];
            }, 1000);
            startBtn.disabled = true;
        }
